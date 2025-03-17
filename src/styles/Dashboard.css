@@ -1,0 +1,253 @@
+.dashboard-container {
+  padding: 16px;
+  padding-bottom: 70px; /* Space for bottom navigation */
+  background-color: white;
+  height: 100%;
+}
+
+/* Header styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  background-color: #fafaf5;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.welcome {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.profile-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Search bar styles */
+.search-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Section headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.see-all-link {
+  color: #0a2463;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Recent searches */
+.recent-searches {
+  margin-bottom: 24px;
+}
+
+.recent-search-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.recent-search-item.active {
+  border-color: #0a2463;
+  border-left-width: 4px;
+}
+
+.search-info {
+  flex: 1;
+}
+
+.search-label {
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.search-value {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.action-button.blue {
+  color: #0a2463;
+}
+
+.action-button.orange {
+  color: #ff8c00;
+}
+
+/* Quick finds */
+.quick-finds {
+  margin-bottom: 24px;
+}
+
+.quick-find-item {
+  /* display: flex; */
+  align-items: center;
+  padding: 12px;
+  background-color: #eee9e9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.quick-find-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.quick-find-details {
+  flex: 1;
+}
+
+.quick-find-details h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.quick-find-meta {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.bookmark-button {
+  background: none;
+  border: none;
+  color: #0a2463;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Bottom navigation */
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  z-index: 100;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.nav-item.active {
+  color: #0a2463;
+  position: relative;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #0a2463;
+  border-radius: 1.5px;
+}
+
+.nav-item svg {
+  margin-bottom: 4px;
+}
+
+/* Add mobile container styles */
+.mobile-container {
+  max-width: 375px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  background-color: white;
+  overflow-x: hidden;
+} 

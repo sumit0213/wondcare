@@ -1,0 +1,537 @@
+.wound-assessment-container {
+  padding: 16px;
+  padding-bottom: 70px; /* Space for bottom navigation */
+  background-color: white;
+  height: 100%;
+}
+
+/* Remove status bar styles */
+
+/* Back button header */
+.back-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.back-button svg {
+  margin-right: 8px;
+}
+
+/* Patient info banner */
+.patient-info-banner {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.patient-info-banner p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Wound capture section */
+.wound-capture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.wound-capture-section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 24px;
+  align-self: flex-start;
+}
+
+/* Image gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.image-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.image-preview {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-info {
+  padding: 8px;
+}
+
+.image-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-date {
+  font-size: 10px;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+.image-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.edit-button, .delete-button {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button {
+  color: #0a2463;
+}
+
+.delete-button {
+  color: #e53935;
+}
+
+/* Capture options */
+.capture-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.capture-button, .upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.capture-button {
+  background-color: #0a2463;
+  color: white;
+}
+
+.upload-button {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Analyze all button */
+.analyze-all-button {
+  display: none;
+}
+
+/* Camera interface */
+.camera-interface {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera-preview {
+  width: 100%;
+  height: 300px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.camera-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #666;
+}
+
+.edit-mode {
+  margin-top: 8px;
+  color: #0a2463;
+  font-weight: 500;
+}
+
+.take-photo-button {
+  position: absolute;
+  bottom: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.camera-button-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #0a2463;
+}
+
+.cancel-camera-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Bottom navigation */
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  z-index: 100;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.nav-item.active {
+  color: #0a2463;
+  position: relative;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #0a2463;
+  border-radius: 1.5px;
+}
+
+.nav-item svg {
+  margin-bottom: 4px;
+}
+
+.bottom-indicator {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  background-color: #000;
+  border-radius: 2.5px;
+  z-index: 101;
+}
+
+/* Next button */
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.next-button svg {
+  margin-left: 8px;
+}
+
+/* Add these styles for the body parts summary */
+.assessment-title {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.body-parts-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.body-part-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.body-part-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.body-part-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.edit-images-button {
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.body-part-images {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.image-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.more-images {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.no-images-message {
+  color: #999;
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.continue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.continue-button svg {
+  margin-left: 8px;
+}
+
+/* Add these styles for the analysis results */
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+.continue-button.analyzing {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+/* Analysis results */
+.analysis-results {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.analysis-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.analysis-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.analysis-header h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.analysis-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.analysis-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.analysis-details {
+  padding: 16px;
+}
+
+.analysis-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.analysis-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.analysis-value {
+  color: #333;
+}
+
+.severity-mild {
+  color: #4caf50;
+}
+
+.severity-moderate {
+  color: #ff9800;
+}
+
+.severity-severe {
+  color: #f44336;
+}
+
+.analysis-section {
+  margin-top: 16px;
+}
+
+.analysis-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.analysis-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.analysis-list li {
+  margin-bottom: 4px;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+} 

@@ -1,0 +1,266 @@
+.onboarding-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  height: 65vh;
+  width: 100%;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left section */
+.onboarding-left {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fafaf5;
+}
+
+/* Center section */
+.onboarding-center {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fafaf5;
+}
+
+/* Right section */
+.onboarding-right {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fafaf5;
+}
+
+/* Bottom actions */
+.onboarding-actions {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fafaf5;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #e8f4ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0a2463;
+  margin: 10px 0;
+}
+
+.app-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Illustration container */
+.illustration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.illustration-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #e8f4ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0a2463;
+  margin: 0 0 30px;
+  max-width: 250px;
+  text-align: center;
+}
+
+/* Navigation dots */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #0a2463;
+  width: 10px;
+  height: 10px;
+}
+
+/* Buttons */
+.skip-button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.next-button {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #083580;
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+/* Connecting lines */
+.onboarding-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 33.33%;
+  right: 33.33%;
+  height: 2px;
+  background-color: #f0ad4e;
+  z-index: 1;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .onboarding-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .onboarding-left,
+  .onboarding-center,
+  .onboarding-right {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .onboarding-actions {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .onboarding-container::before {
+    display: none;
+  }
+  
+  .illustration-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .feature-title {
+    font-size: 16px;
+    max-width: 200px;
+  }
+  
+  /* Hide sections based on current screen */
+  .onboarding-center,
+  .onboarding-right {
+    display: none;
+  }
+  
+  /* Show only the active section */
+  .onboarding-container.screen-0 .onboarding-left,
+  .onboarding-container.screen-1 .onboarding-center,
+  .onboarding-container.screen-2 .onboarding-right {
+    display: flex;
+  }
+}
+
+/* Add these styles to your existing Onboarding.css */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(10, 36, 99, 0.1);
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.logo-container svg {
+  margin-bottom: 20px;
+}
+
+.get-started-button {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  min-width: 140px;
+}
+
+.get-started-button:hover {
+  background-color: #083580;
+} 

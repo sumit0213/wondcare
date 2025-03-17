@@ -1,0 +1,136 @@
+.notifications-container {
+  padding: 16px;
+  padding-bottom: 80px; /* Extra space for bottom navigation */
+  background-color: white;
+  height: 100%;
+}
+
+/* Back button header */
+.back-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.back-button svg {
+  margin-right: 8px;
+}
+
+.notifications-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0a2463;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.notification-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.filter-button {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-button.active {
+  background-color: #0a2463;
+  color: white;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.notification-item.unread {
+  background-color: #f0f7ff;
+  border-left: 4px solid #0a2463;
+}
+
+.notification-icon {
+  font-size: 20px;
+  margin-right: 16px;
+  margin-top: 2px;
+}
+
+.notification-icon.success {
+  color: #4caf50;
+}
+
+.notification-icon.alert {
+  color: #f44336;
+}
+
+.notification-icon.info {
+  color: #2196f3;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 6px 0;
+}
+
+.notification-message {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.empty-notifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: #999;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #ddd;
+}
+
+/* Bottom navigation styles are inherited from the global styles */ 
