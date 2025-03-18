@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { FaArrowLeft, FaCamera, FaUpload, FaHome, FaBook, FaBell, FaUser, FaPlus, FaTrash, FaArrowRight, FaEdit, FaSpinner } from 'react-icons/fa';
 import '../styles/WoundAssessment.css';
+import axios from 'axios';
 
 const WoundAssessment = () => {
   const { patientId } = useParams();
@@ -12,6 +13,7 @@ const WoundAssessment = () => {
   const [showAnalysis, setShowAnalysis] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [woundAnalysis, setWoundAnalysis] = useState({});
+  const [isProcessing, setIsProcessing] = useState(false);
   
   // Load selected wounds from location state
   useEffect(() => {
@@ -213,6 +215,27 @@ const WoundAssessment = () => {
     // Here you would save the analysis results to your backend
     navigate(`/patient/${patientId || 'new'}`);
   };
+
+  const handleProcessImage = async (image) => {
+    setIsProcessing(true);
+    try {
+      const formData = new FormData();
+      formData.append('image', image);
+
+      const response = await axios.post('http://localhost:5000/analyze-wound', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      setWoundAnalysis(response.data);
+    } catch (error) {
+      console.error("Error processing image:", error);
+      alert("An error occurred during image processing.");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
   
   return (
     <div className="wound-assessment-container">
@@ -363,6 +386,23 @@ const WoundAssessment = () => {
           >
             Save and Finish
           </button>
+        </div>
+      )}
+      
+      {/* Process Image Button */}
+      <button 
+        className="process-image-button"
+        onClick={() => handleProcessImage(selectedWounds[0].images[0])}
+        disabled={isProcessing}
+      >
+        {isProcessing ? <FaSpinner className="spinner" /> : "Process Image"}
+      </button>
+
+      {/* Display Analysis Results */}
+      {woundAnalysis.mean_color && (
+        <div className="analysis-results">
+          <h3>Analysis Results</h3>
+          <p>Mean Color: {woundAnalysis.mean_color.join(', ')}</p>
         </div>
       )}
       

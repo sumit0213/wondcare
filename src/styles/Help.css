@@ -1,0 +1,180 @@
+.help-container {
+  padding: 16px;
+  padding-bottom: 80px; /* Extra space for bottom navigation */
+  background-color: white;
+  height: 100%;
+}
+
+/* Back button header */
+.back-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.back-button svg {
+  margin-right: 8px;
+}
+
+.help-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0a2463;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search bar */
+.search-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0a2463;
+}
+
+/* FAQ section */
+.faq-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.question-icon {
+  color: #0a2463;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.chevron-icon {
+  margin-left: auto;
+  color: #666;
+}
+
+.faq-answer {
+  padding: 16px;
+  padding-top: 0;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Contact section */
+.contact-section {
+  margin-bottom: 32px;
+}
+
+.contact-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #0a2463;
+  margin-right: 16px;
+}
+
+.contact-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.contact-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.response-time {
+  font-size: 12px !important;
+  color: #999 !important;
+}
+
+.chat-button {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+  background-color: #081c4f;
+}
+
+/* Bottom navigation styles are inherited from the global styles */ 

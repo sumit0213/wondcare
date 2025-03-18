@@ -1,9 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaHome, FaBook, FaBell, FaUser, FaUserEdit, FaSignOutAlt, FaCog, FaQuestionCircle } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { 
+  FaArrowLeft, FaHome, FaBook, FaBell, FaUser, 
+  FaUserEdit, FaSignOutAlt, FaCog, FaQuestionCircle, 
+  FaUserMd, FaUserInjured, FaHospital, FaPhone, FaEnvelope
+} from 'react-icons/fa';
 import '../styles/Profile.css';
 
 const Profile = () => {
+  const [activeTab, setActiveTab] = useState('clinician');
+  const navigate = useNavigate();
+  
+  // Mock profile data
+  const clinicianProfile = {
+    name: 'Dr. Sarah Johnson',
+    role: 'Wound Care Specialist',
+    hospital: 'City General Hospital',
+    email: 'sarah.johnson@hospital.com',
+    phone: '+1 (555) 123-4567',
+    profileImage: '/images/doctor-avatar.jpg',
+    stats: [
+      { value: '128', label: 'Patients Assessed' },
+      { value: '342', label: 'Wound Assessments' },
+      { value: '87%', label: 'Healing Rate' }
+    ]
+  };
+  
+  const patientProfile = {
+    name: 'John Smith',
+    age: '65',
+    condition: 'Diabetic Foot Ulcer',
+    hospital: 'City General Hospital',
+    email: 'john.smith@email.com',
+    phone: '+1 (555) 987-6543',
+    profileImage: '/images/patient-avatar.jpg',
+    stats: [
+      { value: '12', label: 'Assessments' },
+      { value: '8', label: 'Weeks in Treatment' },
+      { value: '65%', label: 'Healing Progress' }
+    ]
+  };
+  
+  const currentProfile = activeTab === 'clinician' ? clinicianProfile : patientProfile;
+  
+  const handleLogout = () => {
+    // In a real app, you would clear authentication state here
+    navigate('/login');
+  };
+
   return (
     <div className="profile-container">
       {/* Back button header */}
@@ -14,13 +58,50 @@ const Profile = () => {
         </Link>
       </div>
       
+      {/* Profile type tabs */}
+      <div className="profile-tabs">
+        <button 
+          className={`tab-button ${activeTab === 'clinician' ? 'active' : ''}`}
+          onClick={() => setActiveTab('clinician')}
+        >
+          <FaUserMd />
+          <span>Clinician</span>
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'patient' ? 'active' : ''}`}
+          onClick={() => setActiveTab('patient')}
+        >
+          <FaUserInjured />
+          <span>Patient</span>
+        </button>
+      </div>
+      
       <div className="profile-header">
         <div className="profile-avatar">
-          <img src="/images/doctor-avatar.jpg" alt="Profile" />
+          <img src={currentProfile.profileImage} alt="Profile" />
         </div>
-        <h1 className="profile-name">Dr. Sarah Johnson</h1>
-        <p className="profile-role">Wound Care Specialist</p>
-        <p className="profile-hospital">City General Hospital</p>
+        <h1 className="profile-name">{currentProfile.name}</h1>
+        <p className="profile-role">{activeTab === 'clinician' ? currentProfile.role : `Age: ${currentProfile.age}`}</p>
+        <p className="profile-hospital">
+          {activeTab === 'clinician' ? currentProfile.hospital : currentProfile.condition}
+        </p>
+      </div>
+      
+      <div className="profile-contact-info">
+        <div className="contact-item">
+          <FaEnvelope className="contact-icon" />
+          <span>{currentProfile.email}</span>
+        </div>
+        <div className="contact-item">
+          <FaPhone className="contact-icon" />
+          <span>{currentProfile.phone}</span>
+        </div>
+        {activeTab === 'clinician' && (
+          <div className="contact-item">
+            <FaHospital className="contact-icon" />
+            <span>{currentProfile.hospital}</span>
+          </div>
+        )}
       </div>
       
       <div className="profile-actions">
@@ -39,29 +120,21 @@ const Profile = () => {
           <span>Help & Support</span>
         </Link>
         
-        <Link to="/login" className="profile-action-button logout">
+        <button className="profile-action-button logout" onClick={handleLogout}>
           <FaSignOutAlt />
           <span>Logout</span>
-        </Link>
+        </button>
       </div>
       
       <div className="profile-stats">
         <h2 className="section-title">Your Activity</h2>
         
-        <div className="stat-card">
-          <div className="stat-value">128</div>
-          <div className="stat-label">Patients Assessed</div>
-        </div>
-        
-        <div className="stat-card">
-          <div className="stat-value">342</div>
-          <div className="stat-label">Wound Assessments</div>
-        </div>
-        
-        <div className="stat-card">
-          <div className="stat-value">87%</div>
-          <div className="stat-label">Healing Rate</div>
-        </div>
+        {currentProfile.stats.map((stat, index) => (
+          <div className="stat-card" key={index}>
+            <div className="stat-value">{stat.value}</div>
+            <div className="stat-label">{stat.label}</div>
+          </div>
+        ))}
       </div>
       
       {/* Bottom navigation */}

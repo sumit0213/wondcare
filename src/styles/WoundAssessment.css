@@ -534,4 +534,32 @@
   font-weight: 500;
   cursor: pointer;
   margin-top: 16px;
+}
+
+.process-image-button {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.process-image-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.analysis-results {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
 } 

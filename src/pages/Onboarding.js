@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Onboarding.css';
-import { FaHeartbeat, FaCamera, FaBookMedical, FaHandshake } from 'react-icons/fa';
+import { FaHeartbeat, FaCamera, FaBookMedical, FaHandshake, FaHome, FaBook, FaBell, FaUser } from 'react-icons/fa';
 
 const Onboarding = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -116,6 +116,27 @@ const Onboarding = () => {
           </button>
         )}
       </div>
+      
+      {/* Bottom navigation bar (similar to other pages) */}
+      <div className="bottom-navigation">
+        <Link to="/dashboard" className="nav-item">
+          <FaHome />
+          <span>Home</span>
+        </Link>
+        <Link to="/learn" className="nav-item">
+          <FaBook />
+          <span>Learn</span>
+        </Link>
+        <Link to="/notifications" className="nav-item">
+          <FaBell />
+          <span>Notification</span>
+        </Link>
+        <Link to="/profile" className="nav-item">
+          <FaUser />
+          <span>Profile</span>
+        </Link>
+      </div>
+      <div className="bottom-indicator"></div>
     </div>
   );
 };

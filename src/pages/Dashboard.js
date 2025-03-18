@@ -43,8 +43,21 @@ const Dashboard = () => {
     }
   ];
 
+  // New tips and tricks section
+  const tipsAndTricks = [
+    "Keep wounds clean and dry.",
+    "Monitor for signs of infection.",
+    "Ensure proper nutrition for healing."
+  ];
+
   return (
     <div className="dashboard-container">
+      {/* Welcome Banner */}
+      <div className="welcome-banner">
+        <h1>Welcome back, {userData.name}!</h1>
+        <p>Today is {userData.date}</p>
+      </div>
+
       {/* Header with user info */}
       <div className="dashboard-header">
         <div className="user-info">
@@ -56,13 +69,19 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Search bar */}
+      {/* Enhanced Search bar */}
       <div className="search-container">
         <input 
           type="text" 
           className="search-input" 
           placeholder="Search by Member Name, Date, or ID" 
         />
+        <select className="search-filter">
+          <option value="all">All</option>
+          <option value="name">Name</option>
+          <option value="id">ID</option>
+          <option value="date">Date</option>
+        </select>
         <button className="search-button">
           <FaSearch />
         </button>
@@ -113,6 +132,16 @@ const Dashboard = () => {
             </button>
           </div>
         ))}
+      </div>
+
+      {/* Tips & Tricks Section */}
+      <div className="tips-tricks">
+        <h3>Tips & Tricks</h3>
+        <ul>
+          {tipsAndTricks.map((tip, index) => (
+            <li key={index}>{tip}</li>
+          ))}
+        </ul>
       </div>
 
       {/* Bottom navigation */}

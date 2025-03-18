@@ -1,8 +1,9 @@
 .patient-details-container {
   padding: 16px;
   padding-bottom: 70px; /* Space for bottom navigation */
-  background-color: white;
+  background-color: #f4f7fa;
   height: 100%;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Back button header */
@@ -16,8 +17,13 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
-  font-size: 14px;
+  color: #0a2463;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #083a5b;
 }
 
 .back-button svg {
@@ -30,14 +36,19 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 12px;
+  border: 2px solid #0a2463;
 }
 
 .profile-image img {
@@ -63,13 +74,13 @@
 }
 
 .info-label {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
 }
 
 .info-value {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: #333;
 }
 
@@ -88,9 +99,14 @@
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.capture-button:hover {
+  background-color: #083a5b;
 }
 
 .capture-button svg {
@@ -99,20 +115,18 @@
 
 /* Details sections */
 .details-section {
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px;
   margin-bottom: 16px;
   border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .details-row {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
-}
-
-.details-row:last-child {
-  margin-bottom: 0;
 }
 
 .details-label {
@@ -131,6 +145,87 @@
 .download-link a {
   color: #0a63e5;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+.download-link a:hover {
+  color: #083a5b;
+}
+
+/* Additional Information Section */
+.additional-info {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.additional-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.additional-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* Wound Analysis Card */
+.wound-analysis {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.wound-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.wound-details {
+  margin-bottom: 16px;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.details-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.details-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.additional-info h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.additional-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.additional-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
 }
 
 /* Bottom navigation */
@@ -157,6 +252,7 @@
   color: #666;
   font-size: 12px;
   padding: 8px 0;
+  transition: color 0.3s;
 }
 
 .nav-item.active {
@@ -174,6 +270,10 @@
   height: 3px;
   background-color: #0a2463;
   border-radius: 1.5px;
+}
+
+.nav-item:hover {
+  color: #083a5b;
 }
 
 .nav-item svg {
@@ -208,4 +308,124 @@
 
 .capture-wound-button svg {
   margin-right: 8px;
-} 
+}
+
+/* Card style for modern look */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+/* Modern button style */
+.modern-button {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.modern-button:hover {
+  background-color: #083a5b;
+}
+
+.modern-button svg {
+  margin-right: 8px;
+}
+
+/* Details section with icons */
+.details-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.details-icon {
+  margin-right: 8px;
+  color: #0a2463;
+}
+
+.details-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  flex: 1;
+}
+
+.details-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  flex: 2;
+}
+
+.edit-button, .done-button {
+  background-color: #0a2463; /* Bootstrap warning color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.edit-button:hover, .done-button:hover {
+  background-color: #ec971f; /* Darker shade for hover */
+  transform: scale(1.05);
+}
+
+.confirmation-dialog {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.no-button {
+  background-color: #0a2463; /* Same as the "Yes" button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.no-button:hover {
+  background-color: #083a5b; /* Same hover effect as the "Yes" button */
+  transform: scale(1.05);
+}
